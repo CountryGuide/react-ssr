@@ -12,6 +12,7 @@
 		"dev": "run-p start watch watch:client"
 	},
 	"dependencies": {
+		"compression": "^1.7.4",
 		"express": "~4.16.0",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",

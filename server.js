@@ -1,4 +1,5 @@
 import axios from "axios";
+import compression from "compression";
 import Express from 'express';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -15,12 +16,13 @@ app.get('/robots.txt', function (req, res) {
 	res.type('text/plain');
 	res.send("User-agent: *\nDisallow: /");
 });
+app.use(compression());
 app.use('/static', Express.static('static'));
 app.use(handleRender);
 
 function handleRender(req, res) {
 	axios.get('http://localhost:3030/api/countries').then((response) => {
-		const store = createStore(reducers, {countries: response.data});
+		const store = createStore(reducers, { countries: response.data });
 		const html  = renderToStaticMarkup(
 			<Provider store={store}>
 				<App/>
