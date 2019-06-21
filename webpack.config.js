@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	mode: "development",
+	mode: process.env.NODE_ENV || "development",
 	entry: path.resolve(__dirname, 'server.js'),
 	output: {
 		path: path.resolve(__dirname, 'dist'),
@@ -23,6 +23,7 @@ module.exports = {
 		]
 	},
 	resolve: {
+		modules: [path.resolve(__dirname, './'), path.resolve(__dirname, 'client'), 'node_modules' ],
 		extensions: ['*', '.js', '.jsx']
 	}
 };

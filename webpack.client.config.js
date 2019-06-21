@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-	mode: "development",
+	mode: process.env.NODE_ENV || "development",
 	entry: path.resolve(__dirname, 'client', 'index.js'),
 	output: {
 		path: path.resolve(__dirname, 'static'),
@@ -17,6 +17,7 @@ module.exports = {
 		]
 	},
 	resolve: {
+		modules: ['node_modules', path.resolve(__dirname, 'client')],
 		extensions: ['*', '.js', '.jsx']
 	}
 };

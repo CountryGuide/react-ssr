@@ -12,17 +12,22 @@
 		"dev": "run-p start watch watch:client"
 	},
 	"dependencies": {
+		"@babel/runtime": "^7.4.5",
 		"compression": "^1.7.4",
 		"express": "~4.16.0",
+		"http-errors": "^1.7.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-redux": "^7.0.3",
+		"react-router-dom": "^5.0.1",
 		"redux": "^4.0.1",
 		"redux-thunk": "^2.3.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.5",
+		"@babel/plugin-transform-regenerator": "^7.4.5",
+		"@babel/plugin-transform-runtime": "^7.4.4",
 		"@babel/preset-env": "^7.4.5",
 		"@babel/preset-react": "^7.0.0",
 		"axios": "^0.19.0",
